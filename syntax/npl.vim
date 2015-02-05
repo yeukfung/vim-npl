@@ -13,10 +13,10 @@ endif
 syn case match
 syn sync minlines=50 maxlines=1000
 
-syn keyword nplKeyword def schema key default where view assert if else for index
+syn keyword nplKeyword def schema key default where view assert if else for index summarize
 hi link nplKeyword Keyword
 
-syn keyword nplSpecial package import none unique
+syn keyword nplSpecial package import none unique every seconds deltaSum sum max day minute history
 syn keyword nplSpecial on nextgroup=nplTrigger,nplTimeTrigger
 hi link nplSpecial Preproc
 
@@ -42,13 +42,13 @@ hi link nplOptionalType Type
 syn match nplNumber /\<\d\+\>/
 hi link nplNumber Number
 
-syn match nplDeclaration /[A-Z]\w\+\ze\s*{\s*$/
+syn match nplDeclaration /\w\+\ze\s*{\s*/
 hi link nplDeclaration Special
 
 syn match nplTypeReference /^\s*[A-Z]\w\+\s*$/
 hi link nplTypeReference String
 
-syn match nplOperator /\%(==\|!=\|>==\|<==\|==>\|==<\)/
+syn match nplOperator /\%(==\|!=\|>==\|<==\|==>\|==<\|&&\)/
 hi link nplOperator Special
 
 syn match nplFunctionCall /\w\+\ze()/
